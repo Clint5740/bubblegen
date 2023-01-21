@@ -1,4 +1,5 @@
 
+
 from tkinter import *
 import tkinter as tk
 from tkinter import filedialog as tkFileDialog
@@ -39,11 +40,11 @@ def bubble():
         bubble = tkFileDialog.askopenfilename()
         img = Image.open(filename)
         basewidth = img.width
-        baseheight = img.height / 3
+        baseheight = img.height / 2
         bubbleimg = Image.open(bubble)
         bubbleimg = bubbleimg.resize((int(basewidth), int(baseheight)))
         img.paste(bubbleimg, (0, 0), mask=bubbleimg)
-        img.save('bubbled.png')
+        img.save('bubbled.gif')
         if img.width >= 500 and img.width <= 999:
             basewidth = img.width / 1.5
         elif img.width >= 1000 and img.width <= 1999:
